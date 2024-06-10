@@ -49,5 +49,16 @@
       border-right: 2px solid var(--surface-color);
       box-shadow: inset 0 0 5px var(--surface-color);
     }
+    &:nth-child(#{$i}) {
+      @if $i < 5 {
+        position: relative;
+        &::before {
+          position: absolute;
+          content: url("../../static/icons/link-icon.svg");
+          right: -24px;
+          top: -2px;
+        }
+      }
+    }
   }
 }

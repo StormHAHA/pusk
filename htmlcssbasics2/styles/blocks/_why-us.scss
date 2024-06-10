@@ -3,12 +3,16 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
     align-items: center;
+    @include margin-side;
   }
   &__head {
     max-width: 800px;
     text-align: center;
+    margin-bottom: 40px;
+  }
+  &__text {
+    margin-bottom: 140px;
   }
   &__cards {
     display: flex;
@@ -39,4 +43,18 @@
   flex-shrink: 1;
   flex-grow: 1;
   flex-basis: 0;
+}
+
+@for $i from 1 to 4 {
+  .why-us--card:nth-child(#{$i}) {
+    position: relative;
+    &::before {
+      content: url("../../static/icons/icon#{$i}.svg");
+      width: 60px;
+      aspect-ratio: 1;
+      position: absolute;
+      left: -2px;
+      top: -60px;
+    }
+  }
 }

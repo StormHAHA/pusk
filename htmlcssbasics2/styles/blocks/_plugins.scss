@@ -29,6 +29,7 @@
     display: flex;
     margin-top: 60px;
     gap: 80px;
+    padding-left: 60px;
     @include mobile {
       flex-direction: column;
       gap: 72px;
@@ -41,5 +42,18 @@
   max-width: 538px;
   &__head {
     margin-bottom: 12px;
+  }
+}
+@for $i from 1 to 3 {
+  .plugins--card:nth-child(#{$i}) {
+    position: relative;
+    &::before {
+      content: url("../../static/icons/icon#{$i+3}.svg");
+      width: 60px;
+      aspect-ratio: 1;
+      position: absolute;
+      top: -1.4px;
+      left: -60px;
+    }
   }
 }

@@ -26,8 +26,23 @@
   @include card;
   padding: 24px 16px 24px 16px;
   max-width: 950px;
+  margin-top: 60px;
   min-height: 165px;
   &__head {
     margin-bottom: 12px;
+  }
+}
+
+@for $i from 1 to 4 {
+  .goal--card:nth-child(#{$i}) {
+    position: relative;
+    &::before {
+      content: url("../../static/icons/num#{$i}.svg");
+      width: 60px;
+      aspect-ratio: 1;
+      position: absolute;
+      left: -2px;
+      top: -60px;
+    }
   }
 }

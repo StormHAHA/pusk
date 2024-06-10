@@ -39,7 +39,22 @@
   @include card;
   max-width: 598px;
   padding: 16px;
+  margin-top: 60px;
   &__head {
     margin-bottom: 8px;
+  }
+}
+
+@for $i from 1 to 5 {
+  .community--card:nth-child(#{$i}) {
+    position: relative;
+    &::before {
+      content: url("../../static/icons/icon#{$i+5}.svg");
+      width: 60px;
+      aspect-ratio: 1;
+      position: absolute;
+      left: -2px;
+      top: -60px;
+    }
   }
 }
