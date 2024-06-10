@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+body {
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+h1[class],
+h2[class] {
+  font-family: "HelveticaNeue";
+  font-weight: 700;
+  color: var(--text-primary);
+}
+h2[class] {
+  @include fluid-text(60, 32);
+}
+h3[class] {
+  font-family: "Inter";
+  font-weight: 600;
+  @include fluid-text(28, 16);
+  color: var(--text-primary);
+}
+a {
+  text-decoration: none;
+}
+p,
+span,
+a {
+  font-family: "Inter";
+}
+p[class] {
+  @include fluid-text(16, 14);
+  color: var(--text-secondary);
+}
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+}

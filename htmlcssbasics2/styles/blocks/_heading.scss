@@ -1,0 +1,29 @@
+.heading {
+  margin-top: var(--section-margin-top);
+  @include margin-side;
+
+  &__inner {
+    max-width: 1094px;
+    position: relative;
+    &::after {
+      content: url("../../static/Image-bg-05-\(Desktop\ main\).png");
+      position: absolute;
+      top: -600px;
+      right: -600px;
+      z-index: -1;
+    }
+  }
+  &__head {
+    @include fluid-text(80, 36);
+    margin-top: 18px;
+  }
+  &__text {
+    @include fluid-text(24, 16);
+  }
+  &__text,
+  &__head {
+    @include mobile {
+      text-align: center;
+    }
+  }
+}

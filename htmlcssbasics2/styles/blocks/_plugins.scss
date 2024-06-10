@@ -1,0 +1,45 @@
+.plugins {
+  margin-top: var(--section-margin-top);
+  &__container {
+    @include margin-side;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__inner {
+    position: relative;
+    &::before {
+      content: url("../../static/image-bg-4.png");
+      position: absolute;
+      right: -500px;
+      top: -300px;
+      z-index: -1;
+    }
+  }
+  &__head {
+    max-width: 900px;
+    text-align: center;
+  }
+  &__text {
+    max-width: 700px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  &__cards {
+    display: flex;
+    margin-top: 60px;
+    gap: 80px;
+    @include mobile {
+      flex-direction: column;
+      gap: 72px;
+    }
+  }
+}
+.plugins--card {
+  @include card;
+  padding: 24px 16px 16px 16px;
+  max-width: 538px;
+  &__head {
+    margin-bottom: 12px;
+  }
+}

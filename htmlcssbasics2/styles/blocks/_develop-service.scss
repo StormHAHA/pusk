@@ -1,0 +1,76 @@
+.develop-service {
+  margin-top: var(--section-margin-top);
+  &__container {
+    @include margin-side;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      flex-direction: column;
+      gap: 36px;
+    }
+  }
+  &__inner {
+    position: relative;
+    &::before {
+      content: url("../../static/image-bg-5.png");
+      position: absolute;
+      top: -900px;
+      left: -600px;
+      z-index: -1;
+    }
+  }
+  &__description {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__form {
+    @include card;
+    max-width: 495px;
+  }
+}
+.form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  &__input {
+    @include form-input;
+    &--about {
+      @include form-input;
+      padding-bottom: 96px;
+    }
+    &--file {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
+    &--file-l {
+      color: var(--text-primary);
+      font-family: "Inter";
+      margin-right: auto;
+      transform: translateX(34px);
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: url("../../static/file-icon.svg");
+        position: absolute;
+        left: -34px;
+        top: -3px;
+      }
+    }
+  }
+  button {
+    @include button;
+    width: 100%;
+  }
+}

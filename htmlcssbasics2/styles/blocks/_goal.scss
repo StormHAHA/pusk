@@ -1,0 +1,33 @@
+.goal {
+  margin-top: var(--section-margin-top);
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include margin-side;
+  }
+  &__head,
+  &__text {
+    text-align: center;
+  }
+  &__head {
+    margin-bottom: 40px;
+  }
+  &__text {
+    margin-bottom: 60px;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.goal--card {
+  @include card;
+  padding: 24px 16px 24px 16px;
+  max-width: 950px;
+  min-height: 165px;
+  &__head {
+    margin-bottom: 12px;
+  }
+}

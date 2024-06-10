@@ -1,0 +1,53 @@
+.existing-plugins {
+  margin-top: var(--section-margin-top);
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include margin-side;
+  }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__head {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+}
+.existing-plugins--card {
+  @include card;
+  display: flex;
+  &__container {
+    padding: 24px 16px 16px 16px;
+  }
+  &__image-container {
+    width: 260px;
+    height: 160px;
+  }
+  &__head {
+    margin-bottom: 12px;
+  }
+  &:nth-child(5) {
+    .existing-plugins--card__image-container {
+      img {
+        width: 24px;
+        aspect-ratio: 1;
+      }
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+@for $i from 1 through 5 {
+  .existing-plugins--card:nth-child(#{$i}) {
+    .existing-plugins--card__image-container {
+      background-image: url("../../static/pl-card-#{$i}.png");
+      background-repeat: no-repeat;
+      background-position: top right;
+      border-right: 2px solid var(--surface-color);
+      box-shadow: inset 0 0 5px var(--surface-color);
+    }
+  }
+}

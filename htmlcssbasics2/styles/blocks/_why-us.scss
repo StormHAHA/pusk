@@ -1,0 +1,42 @@
+.why-us {
+  margin-top: 386px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  &__head {
+    max-width: 800px;
+    text-align: center;
+  }
+  &__cards {
+    display: flex;
+    gap: 20px;
+    @include mobile {
+      flex-direction: column;
+      gap: 72px;
+    }
+  }
+  &__inner {
+    position: relative;
+    &::after {
+      content: url("../../static/bg-08.png");
+      position: absolute;
+      top: -800px;
+      right: -900px;
+      z-index: -100;
+    }
+  }
+}
+.why-us--card {
+  @include card;
+  padding: 16px;
+  max-width: 392px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  flex-basis: 0;
+}
